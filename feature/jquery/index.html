@@ -1,10 +1,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.removeStyleValue.js"></script>
 
 Get Ajax text:<br/>
 <div id="result"></div>
 <hr/>
 Get Ajax json:<br/>
 <div id="result_json"></div>
+
+<hr/>
+
+<div id="simple_plugin" style="color:red;margin:10px;border:1px solid;">Create simple plugin and test</div>
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){
@@ -18,5 +23,7 @@ Get Ajax json:<br/>
 	            $("#result_json").append('Full name: ' + field.firstName + ' ' + field.lastName + ", age: " + field.age + "<br/>");
 	        });
 	    });
+
+	    $('#simple_plugin').removeStyleValue({stylekey:'color', debug: true});
 	});
 </script>
