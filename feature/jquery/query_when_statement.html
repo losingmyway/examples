@@ -1,0 +1,38 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<h2>$.When with Jquery:</h2><br/>
+<div id="result"></div>
+
+<hr/>
+
+<script type="text/javascript">
+	function myFunc(v1, v2)
+	{
+		//console.log(arguments);
+		console.log(v1);//index = 0: data from server, index = 1 : status, index = 2: object request data
+		console.log(v2);//
+		alert("Successful");
+	}
+	function myFailure(v1, v2)
+	{
+		//[Object, "error", "Not Found"] object request, status, message
+		console.log(arguments);
+		alert("myFailure");
+	}
+	jQuery(document).ready(function(){
+		/*$.when( $.ajax( "/feature/jquery/page1.php" ), $.ajax( "/feature/jquery/page2.php" ) )
+  		.then( myFunc, myFailure );*/
+
+  		$.when( $.ajax( {
+			url: "/feature/jquery/page1.php",
+			data: 'test=my param',
+			dataType: 'json'
+		} ), $.ajax( "/feature/jquery/page2.php" ) )
+  		.done( function(a1, a2) {
+  			//only successful it will do something
+  			console.log(a1);
+  			console.log(a2);
+  		});
+		
+	});
+</script>
