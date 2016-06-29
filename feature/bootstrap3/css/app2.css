@@ -2,8 +2,10 @@
 #navbar2 .navbar-header {
     float: none;
 }
-
-#navbar2 .navbar-toggle {
+#navbar3 .navbar-header {
+    float: left;
+}
+#navbar2 .navbar-toggle, #navbar3 .navbar-toggle {
     display: block;
 }
 
@@ -11,6 +13,46 @@
     float: none !important;
     margin: 7.5px -15px;
 }
+
+#navbar3 .navbar-nav {
+    clear: both;
+    float: none !important;
+    margin: 7.5px -15px;
+}
+#navbar3 .navbar-nav>li {
+    float: none;
+}
+#navbar3 .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
+#navbar3 .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    display: block;
+    width: 30%;
+    height: 100% !important;
+    margin: 0;
+    background-color: #f8f8f8;
+    transition: left 0.5s ease;
+}
+#navbar3 .navbar-collapse.in {
+    left: 0;
+}
+body.menu-slider3.in3 #wrapper {
+    left: 30%;
+}
+body.menu-slider3.in3 {
+    overflow: hidden;
+}
+
+/* body.menu-slider3 #wrapper {
+    transition: left 0.35s ease;
+} */
 
 #navbar2 .navbar-nav .open .dropdown-menu {
     position: static;
