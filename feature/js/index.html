@@ -1,0 +1,56 @@
+<script type="text/javascript">
+	//getTime always return UTC timestamp 
+	var date = new Date();
+	var utcTimeStamp1 = Date.UTC(date.getFullYear(), date.getMonth(),date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getUTCMilliseconds());
+	var utcTimeStamp2 = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(),date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(), date.getUTCMilliseconds());
+
+	console.log('UTC Timestamp 1 = ' + utcTimeStamp1);
+	console.log('UTC Timestamp 2 = ' + utcTimeStamp2);
+	console.log('Local Timestamp = ' + date.getTime());
+	console.log('toUTCString = ' + date.toUTCString());
+	console.log(date);
+	/*var test1 = new Date("Sun, 24 Jul 2016 14:43:04 GMT");
+	alert(test1.getTime());
+	var test2 = new Date("Sun Jul 24 2016 21:43:04 GMT+0700");
+	alert(test2.getTime());
+	*/
+
+	console.log('==============================');
+	var date2 = new Date(2016,07,25, 5, 6, 7);
+	console.log(date2);
+	console.log("UTC hours: " + date2.getUTCHours());
+	console.log("UTC minutes: " + date2.getUTCMinutes());
+	console.log("UTC seconds: " + date2.getUTCSeconds());
+	console.log('------------------------------');
+	console.log("hours: " + date2.getHours());
+	console.log("minutes: " + date2.getMinutes());
+	console.log("seconds: " + date2.getSeconds());
+
+	console.log('==============================');
+	//create new local date from UTC
+	var utcTimeStamp = Date.UTC(2016,07,25, 5, 6, 7);
+	console.log('------------------------------');
+	console.log('UTC Timestamp = ' + utcTimeStamp);
+	var date3 = new Date(2016,07,25, 5, 6, 7);
+	console.log('date Timestamp = ' + date3.getTime());
+	
+
+	var date3 = new Date(utcTimeStamp);
+	var utcTimeStamp2 = Date.UTC(date3.getUTCFullYear(), date3.getUTCMonth(),date3.getUTCDate(), date3.getUTCHours(), date3.getUTCMinutes(), date3.getUTCSeconds(), date3.getUTCMilliseconds());
+	//date3.setTime( date3.getTime() + 7*60*60*1000 );
+	//date3.setTime( date3.getTime() - date3.getTimezoneOffset()*60*1000 );
+
+	console.log('date Timestamp= ' + utcTimeStamp2);
+	console.log('Local Date Timestamp = ' + date3.valueOf());
+	console.log('------------------------------');
+	console.log(date3);
+	console.log("UTC hours: " + date3.getUTCHours());
+	console.log("UTC minutes: " + date3.getUTCMinutes());
+	console.log("UTC seconds: " + date3.getUTCSeconds());
+
+	console.log('------------------------------');
+	console.log("hours: " + date3.getHours());
+	console.log("minutes: " + date3.getMinutes());
+	console.log("seconds: " + date3.getSeconds());
+
+</script>
